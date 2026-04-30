@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-04-30T14:22:31Z",
+    "log_level": "WARN",
+    "event_type": "failed_login",
+    "user": {
+      "username": "jdoe",
+      "user_id": "u12345"
+    },
+    "source": {
+      "ip_address": "192.168.1.45"
+    },
+    "target": {
+      "resource": "/api/login",
+      "service": "auth-service"
+    },
+    "action": {
+      "type": "authentication",
+      "status": "failure",
+      "reason": "invalid_password"
+    },
+    "metrics": {
+      "attempt_count": 3,
+      "risk_score": 65
+    },
+    "security": {
+      "alerts": ["account_locked"],
+      "flagged": true
+    },
+    "correlation_id": "evt-10001"
+  },
+  {
+    "timestamp": "2026-04-30T14:23:10Z",
+    "log_level": "INFO",
+    "event_type": "successful_login",
+    "user": {
+      "username": "asmith",
+      "user_id": "u67890"
+    },
+    "source": {
+      "ip_address": "172.16.0.12"
+    },
+    "target": {
+      "resource": "/api/login",
+      "service": "auth-service"
+    },
+    "action": {
+      "type": "authentication",
+      "status": "success",
+      "reason": ""
+    },
+    "metrics": {
+      "attempt_count": 1,
+      "risk_score": 5
+    },
+    "security": {
+      "alerts": [],
+      "flagged": false
+    },
+    "correlation_id": "evt-10002"
+  },
+  {
+    "timestamp": "2026-04-30T14:25:02Z",
+    "log_level": "ERROR",
+    "event_type": "unauthorized_access",
+    "user": {
+      "username": "unknown",
+      "user_id": ""
+    },
+    "source": {
+      "ip_address": "203.0.113.99"
+    },
+    "target": {
+      "resource": "/admin/config",
+      "service": "config-service"
+    },
+    "action": {
+      "type": "authorization",
+      "status": "denied",
+      "reason": "insufficient_permissions"
+    },
+    "metrics": {
+      "attempt_count": 1,
+      "risk_score": 85
+    },
+    "security": {
+      "alerts": ["security_team_notified"],
+      "flagged": true
+    },
+    "correlation_id": "evt-10003"
+  }
+]
