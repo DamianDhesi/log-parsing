@@ -17,7 +17,7 @@ def TopXPercentVisitors(log_file : str, x : int):
                 visitors_count += 1
 
     visit_list : list[tuple] = list(visit_dict.items())
-    visit_list.sort(key=lambda tup:tup[1], reverse=True)    # sort is typically O(nlog(n))
+    visit_list.sort(key=lambda tup:tup[1], reverse=True)
 
     # get number for visitors based off given percent
     num_of_visitors : int = int(x/100 * visitors_count)

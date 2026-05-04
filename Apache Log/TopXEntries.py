@@ -42,7 +42,6 @@ def TopXEntriesMemEfficent(log_file : str, x : int):
             if (latency_str == "-"):
                 latency_str = "0"
 
-            # make latency negative to get max heap functionality before 3.14
             item : tuple[int, str] = (int(latency_str), line)
 
             if (len(heap) < num_of_entries):
